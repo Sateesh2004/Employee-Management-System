@@ -116,6 +116,7 @@ const Signin = () => {
       onChange={(e) => {
         setPassword(e.target.value);
       }}
+       placeholder="password"
       className="bg-white/50 border border-gray-300 text-gray-900 text-sm block w-full p-2.5 focus:outline-none rounded-lg"
       required
     />
