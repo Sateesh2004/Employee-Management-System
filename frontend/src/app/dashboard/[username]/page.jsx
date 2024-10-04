@@ -316,12 +316,12 @@ const Dashboard = ({ params }) => {
       </header>
 
       <main className="flex flex-1 overflow-hidden">
-        <aside className="w-[200px] bg-white p-4 border-r overflow-y-auto">
+        <aside className="sm:w-[200px] w-[100px] bg-white p-4 border-r overflow-y-auto">
           <ul className="space-y-2">
             <li>
               <button
                 onClick={() => handlePageChange('home')}
-                className={`w-full text-left p-2 hover:bg-gray-200 ${currentPage === 'home' ? 'bg-gray-200' : ''}`}
+                className={`w-full sm:text-[16px] text-[12px] text-left p-2 hover:bg-gray-200 ${currentPage === 'home' ? 'bg-gray-200' : ''}`}
               >
                 Home 
               </button>
@@ -329,7 +329,7 @@ const Dashboard = ({ params }) => {
             <li>
               <button
                 onClick={() => handlePageChange('employees')}
-                className={`w-full text-left p-2 hover:bg-gray-200 ${currentPage === 'employees' ? 'bg-gray-200' : ''}`}
+                className={`w-full sm:text-[16px] text-[12px] text-left p-2 hover:bg-gray-200 ${currentPage === 'employees' ? 'bg-gray-200' : ''}`}
               >
                 Employee List
               </button>
