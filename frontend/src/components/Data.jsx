@@ -221,7 +221,7 @@ const Data = () => {
       );
   
       console.log("Employee updated successfully");
-      toast.success("Employee updated successfully)
+      toast.success("Employee updated successfully!")
       setIsUpdateFormOpen(false);
     } catch (error) {
       console.error("Error updating employee:", error);
