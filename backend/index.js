@@ -15,10 +15,15 @@ dotenv.config({path:".env.local"})
 
 const app = express()
 app.use(cookieParser())
+
+const allowedOrigins = ['https://dealsdray-eosin.vercel.app'];
+
 app.use(cors({
-    origin: 'https://dealsdray-eosin.vercel.app',  
-    credentials: true,                
-}));
+    origin: allowedOrigins,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Adjust as necessary
+    credentials: true // Include this if your requests require credentials (cookies, authorization headers, etc.)
+}));              
+
 
 
 app.use(express.json());
