@@ -50,7 +50,7 @@ const EmployeeList = () => {
     formData.append('addedBy', 'Admin');
   
     try {
-      const response = await fetch('http://localhost:4000/employee/add', {
+      const response = await fetch('https://dealsdray-1.onrender.com/employee/add', {
         method: 'POST',
         body: formData, 
       });
@@ -255,7 +255,7 @@ const Dashboard = ({ params }) => {
 
   const logoutHandler = async () => {
     try {
-      await fetch('http://localhost:4000/logout', {
+      await fetch('https://dealsdray-1.onrender.com/logout', {
         method: 'POST',
         credentials: 'include',
       });
@@ -270,7 +270,7 @@ const Dashboard = ({ params }) => {
   useEffect(() => {
     const authenticateUser = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/validate/${params.username}`, {
+        const response = await fetch(`https://dealsdray-1.onrender.com/validate/${params.username}`, {
           method: 'GET',
           credentials: 'include',
         });

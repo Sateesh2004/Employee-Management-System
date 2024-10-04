@@ -28,7 +28,7 @@ const EmployeeTable = ({ employees, currentPage, setEmployees, openUpdateForm })
     
     if (confirmed) {
       try {
-        const response = await fetch(`http://localhost:4000/delete/employees/${employeeId}`, {
+        const response = await fetch(`https://dealsdray-1.onrender.com/delete/employees/${employeeId}`, {
           method: "DELETE",
         });
         
@@ -154,7 +154,7 @@ const Data = () => {
       setLoading(true);
       try {
         const response = await fetch(
-          `http://localhost:4000/api/employees?page=${currentPage}&limit=6&search=${debouncedSearchTerm}`
+          `https://dealsdray-1.onrender.com/api/employees?page=${currentPage}&limit=6&search=${debouncedSearchTerm}`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -197,7 +197,7 @@ const Data = () => {
 
   const handleUpdateEmployee = async (updatedEmployee) => {
     try {
-      const response = await fetch(`http://localhost:4000/update/employees/${selectedEmployee._id}`, {
+      const response = await fetch(`https://dealsdray-1.onrender.com/update/employees/${selectedEmployee._id}`, {
         method: "PUT",
         body: updatedEmployee, 
       });

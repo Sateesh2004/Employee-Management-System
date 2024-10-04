@@ -17,7 +17,7 @@ const page = () => {
 
     }
     try {
-      const response = await fetch("http://localhost:4000/auth/signin", {
+      const response = await fetch("https://dealsdray-1.onrender.com/auth/signin", {
         method: "POST",
         credentials: "include",
         headers: {

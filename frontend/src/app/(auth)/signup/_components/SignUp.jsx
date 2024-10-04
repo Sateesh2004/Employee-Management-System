@@ -26,7 +26,7 @@ const Signup = () => {
 
         }
         try{
-            const response = await fetch("http://localhost:3100/auth/signup",{
+            const response = await fetch("https://dealsdray-1.onrender.com/auth/signup",{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json"
