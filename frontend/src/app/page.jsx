@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const page = () => {
   const router = useRouter()
   const [username, setUsername] = useState("Sateesh1")
-  const [password, setPassword] = useState("dealsdry1")
+  const [password, setPassword] = useState("dealsdry1!")
   const submitHandler = async (e) => {
     e.preventDefault()
     const data = {
