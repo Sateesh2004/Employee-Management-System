@@ -126,56 +126,60 @@ app.get('/api/employees', async (req, res) => {
   const upload = multer({ storage });
   app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-  app.put("/update/employees/:employeeId", upload.single('photo'), async (req, res) => {
+   app.put("/update/employees/:employeeId", upload.single('photo'), async (req, res) => {
     const { employeeId } = req.params; 
-    const { name, email, mobile} = req.body;
-    if(!name){
-      return res.status(400).json({message:"Name is required!"})
-  }
-    if(!email){
-      return res.status(400).json({message:"Email is required!"})
-  }
-  if(!mobile){
-      return res.status(400).json({message:"Number is required!"})
-  }
-  
+    const { name, email, mobile } = req.body;
 
+    // Basic validations
+    if (!name) {
+        return res.status(400).json({ message: "Name is required!" });
+    }
+    if (!email) {
+        return res.status(400).json({ message: "Email is required!" });
+    }
+    if (!mobile) {
+        return res.status(400).json({ message: "Number is required!" });
+    }
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-      return res.status(400).json({ message: 'Invalid email format!' });
-  }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        return res.status(400).json({ message: 'Invalid email format!' });
+    }
 
+    const mobileRegex = /^[0-9]+$/; 
+    if (!mobileRegex.test(mobile)) {
+        return res.status(400).json({ message: 'Invalid mobile number!' });
+    }
 
-  const mobileRegex = /^[0-9]+$/; 
-  if (!mobileRegex.test(mobile)) {
-      return res.status(400).json({ message: 'Invalid mobile number!' });
-  }
+    // Check for existing employees, excluding the one being updated
+    const existingEmployee = await Employee.findOne({ 
+        $or: [
+            { email, _id: { $ne: employeeId } }, 
+            { mobile, _id: { $ne: employeeId } }
+        ]
+    });
 
+    if (existingEmployee) {
+        if (existingEmployee.email === email) {
+            return res.status(400).json({ message: 'Email already exists!' });
+        }
+        if (existingEmployee.mobile === mobile) {
+            return res.status(400).json({ message: 'Mobile number already exists!' });
+        }
+    }
 
-  
-
-  const existingEmployee = await Employee.findOne({ $or: [{ email }, { mobile }] });
-  if (existingEmployee) {
-      if (existingEmployee.email === email) {
-          return res.status(400).json({ message: 'Email already exists!' });
-      }
-      if (existingEmployee.mobile === mobile) {
-          return res.status(400).json({ message: 'Mobile number already exists!' });
-      }
-  }
-    console.log(req.body)
+    console.log(req.body);
     const updatedData = req.body; 
+
     try {
-        
         if (req.file) {
-          const allowedImageTypes = ['image/jpeg', 'image/png'];
-          if (!allowedImageTypes.includes(req.file.mimetype)) {
-         return res.status(400).json({ message: 'Only JPG and PNG files are allowed!' });
-  }
+            const allowedImageTypes = ['image/jpeg', 'image/png'];
+            if (!allowedImageTypes.includes(req.file.mimetype)) {
+                return res.status(400).json({ message: 'Only JPG and PNG files are allowed!' });
+            }
             updatedData.photoUrl = `/uploads/${req.file.filename}`; 
         }
-        console.log(req.file)
+        console.log(req.file);
 
         const updatedEmployee = await Employee.findByIdAndUpdate(employeeId, updatedData, { new: true });
 
