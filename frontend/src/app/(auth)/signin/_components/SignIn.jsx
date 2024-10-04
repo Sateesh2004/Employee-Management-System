@@ -5,8 +5,8 @@ import { useRouter } from 'next/navigation'
 const Signin = () => {
    const router = useRouter()
     
-    const [username,setUsername]=useState("admin")
-    const [password,setPassword]=useState("admin")
+    const [username,setUsername]=useState("Sateesh1")
+    const [password,setPassword]=useState("dealsdry1!")
     const submitHandler= async (e)=>{
         e.preventDefault()
         const data = {
