@@ -91,7 +91,7 @@ const EmployeeTable = ({ employees, currentPage, setEmployees, openUpdateForm })
               <td className="py-2 px-4 text-center border">
                 <div className="flex justify-center items-center">
                   <Image
-                    src={employee.photoUrl ? `http://localhost:4000${employee.photoUrl}` : '/default-profile.png'}
+                    src={employee.photoUrl ? `https://dealsdray-1.onrender.com${employee.photoUrl}` : '/default-profile.png'}
                     alt="Employee"
                     className="w-12 h-12 object-cover rounded-full border-2 border-gray-300 shadow-lg"
                     width={48}
