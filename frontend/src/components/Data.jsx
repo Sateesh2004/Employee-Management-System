@@ -347,10 +347,10 @@ const UpdateForm = ({ employee, onClose, onUpdate }) => {
       return formData[key] !== employee[key];
     });
 
-    if (!hasChanged || (selectedImage === null && !hasChanged)) {
-      alert("No changes detected to submit.");
-      return; // Prevent form submission if no changes
-    }
+    if (!hasChanged && selectedImage === null) {
+    alert("No changes detected to submit.");
+    return; // Prevent form submission if no changes
+  }
 
     const updatedEmployee = new FormData();
     updatedEmployee.append("name", formData.name);
