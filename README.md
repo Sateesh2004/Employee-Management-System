@@ -93,8 +93,11 @@ The Employee Management System helps organizations maintain detailed records of 
 ## Screenshot
 
 **Sign in Page**
+
 ![image](https://github.com/user-attachments/assets/45be6884-dff6-471e-8317-da4bd80059a8)
+
 **Employee List:**
+
 ![image](https://github.com/user-attachments/assets/fb132014-470e-4ab8-9844-5ccd175271d9)
 
 ## Future Enhancements
