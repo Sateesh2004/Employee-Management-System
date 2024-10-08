@@ -17,7 +17,7 @@ This project is a comprehensive **Employee Management System** divided into two 
 
 ## Overview
 
-The Employee Management System helps organizations maintain detailed records of their employees. The system allows HR teams and administrators to handle a variety of tasks, including adding new employees, viewing their records, updating employee data, and deleting unnecessary records. The app is divided into a **frontend** built with HTML, CSS, Tailwind CSS JavaScript, React, Next.js and a **backend** powered by Node.js and MongoDB.
+The Employee Management System helps organizations maintain detailed records of their employees. The system allows HR teams and administrators to handle a variety of tasks, including adding new employees, viewing their records, updating employee data, and deleting unnecessary records. The app is divided into a **frontend** built with HTML, CSS, Tailwind CSS, JavaScript, React, Next.js and a **backend** powered by Node.js and MongoDB.
 
 ## Features
 
@@ -92,10 +92,10 @@ The Employee Management System helps organizations maintain detailed records of 
 
 ## Screenshot
 
-![image](https://github.com/user-attachments/assets/fb132014-470e-4ab8-9844-5ccd175271d9)
+**Sign in Page**
 ![image](https://github.com/user-attachments/assets/45be6884-dff6-471e-8317-da4bd80059a8)
-
-
+**Employee List:**
+![image](https://github.com/user-attachments/assets/fb132014-470e-4ab8-9844-5ccd175271d9)
 
 ## Future Enhancements
 
