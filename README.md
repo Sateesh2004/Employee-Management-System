@@ -107,6 +107,4 @@ The Employee Management System helps organizations maintain detailed records of 
 - Add export functionality (e.g., CSV export) for employee data.
 - Integration with email services for sending automated notifications.
 
-## License
 
-This project is licensed under the MIT License.
